@@ -13,12 +13,7 @@ def part1(values: List[int]) -> int:
 
 def part2(values: List[int]) -> int:
 
-    three_sums = []
-    for i in range(len(values)):
-        if (i+2 < len(values)):
-            val = values[i] + values[i+1] + values[i+2]
-            three_sums.append(val)
-    return part1(three_sums)
+    return part1([sum(values[i:i+3]) for i in range(len(values))])
 
 if __name__ == '__main__':
 
